@@ -5,6 +5,14 @@
     <title>主页</title>
 </head>
 <body>
-<h1>{{content}}</h1>
+<h1>{{ dct }}</h1>
+<ul>
+    {% for k,v in dct.items %}
+        <li style="color:{{ forloop.counter0|divisibleby:'2'|yesno:'red,blue' }}">
+            {{ forloop.counter }} {{ k }} {{ v }}
+        </li>
+    {% endfor %}
+</ul>
+
 </body>
 </html>
